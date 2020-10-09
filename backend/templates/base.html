@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>TinyDrive</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+    <!--Top of Window Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">TinyDrive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item" v-if="authenticated">
+              <a
+                class="nav-link"
+                href="/upload"
+                v-on:click="showForm = !showForm"
+                style="cursor: pointer;"
+                id="upload"
+              >Upload</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav navbar-right">
+            {% if is_anonymous %}
+            <li class="nav-item" v-if="!authenticated">
+              <a class="nav-link" href="/login/auth0" style="cursor: pointer;">Log In</a>
+            </li>
+            {% else %}
+            <li class="nav-item" v-if="authenticated">
+              <a class="nav-link" href="/logout" style="cursor: pointer;">Log Out</a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+
+    <footer class="navbar navbar-light bg-light" style="bottom: 0px; width: 100%;">
+        <a style="color: black;" href='/credits'>credits</a>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <!-- Landing Page -->
+    <div id="landing" class="container-fluid" style="background-color: #E7E7E8; height: 100%;">
+        <div class="jumbotron animated" v-if="!authenticated" style="background-color: #EFF0F0; border-radius: 250px; font-style: bold;" >
+            <h1 class="display-3  row justify-content-center">Welcome to TinyDrive!</h1>
+            <hr class="my-4">
+            <p class="lead">TinyDrive is the newest in file sharing technology. Utilizing the ease of Google Drives
+                usability and TinyURL's ease of sharing, TinyDrive is revolutionary in todays collaborative space.</p>
+        </div>
+
+        <div class="jumbotron-fluid ml-5" v-if="!authenticated">
+            <div class="row">
+                <div class="col-lg-4 justify-content-center animated fadeInUp">
+                    <div class="upload-icon"></div>
+                    <h6 class="justify-content-center">Quickly upload the most common file types. Anything from text files to
+                        images!</h6>
+                </div>
+                <div class="col-lg-4 justify-content-center animated fadeInUp delay-1s">
+                    <div class="share-icon"></div>
+                    <h6>Share with anyone and everyone, all across the world with just one click</h6>
+                </div>
+                <div class="col-lg-4 justify-content-center animated fadeInUp delay-2s">
+                    <div class="timer-icon"></div>
+                    <h6>Set timers on your work so that due dates are met on time, without excuse!</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

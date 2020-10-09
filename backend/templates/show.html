@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container h-100 d-flex justify-content-center mt-5 bg-light" style="height: 100%;">
+
+    <div class="row">
+        <div class="col-md-3 justify-content-center">
+            <div class="file-icon"></div>
+            <h1>{{ file.name }}</h1>
+            
+            <div class="row">
+                <form action="/download/{{ file.url }}" class="col-lg-2 justify-content-center mr-3">
+                    <input class="download-icon" type="submit" value="" />
+                </form>
+            
+                {% if allow_edit %}
+                <form action="/delete/{{ file.url }}" class="col-lg-2 justify-content-center">
+                    <input class="trash-icon" type="submit" value="" />
+                </form>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="col-md-6 justify-content-center mt-3">
+                <form>
+                        {{ show_form.as_p }}
+                    </form>
+                    {% if file.next_file %}
+                    <a href="/show/{{ file.next_file.url }}">Newer Version</a>
+                {% endif %}
+        
+                {% if file.prev_file %}
+                    <a href="/show/{{ file.prev_file.url }}">Older Version</a>
+                {% endif %}
+        </div>
+
+        <div class="col-md-3 justify-content-center mt-3">
+            {% if not file.next_file %}
+            <form action="/update/{{ file.url }}" method="post" enctype="multipart/form-data" class="mt-5">
+                {% csrf_token %}
+                {{ update_form.as_p }}
+                <input class="btn bg-dark" type="submit" value="Re-Upload" style="color: white;" />
+            </form>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

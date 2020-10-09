@@ -1,0 +1,13 @@
+django
+#djangorestframework
+social-auth-app-django
+pyjwt
+python-dotenv
+#mysqlclient
+psycopg2-binary
+django-widget-tweaks
+whitenoise
+gunicorn
+django-heroku
+python-magic
+django-cloudinary-storage

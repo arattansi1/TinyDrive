@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container h-100 d-flex justify-content-center mt-5">
+    <form method="post" enctype="multipart/form-data">
+        <!--{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload</button>-->
+        {% csrf_token %}
+        {% load widget_tweaks %}
+        <div class="form-group">
+            <label for="filename">Custom URL:</label>
+            {{ form.url|add_class:"form-control" }}
+            {{ form.url.errors }}
+        </div>
+        <div class="form-group">
+            <label for="filename">Description:</label>
+            {{ form.description|add_class:"form-control" }}
+            {{ form.description.errors }}
+        </div>
+        <div class="form-group">
+            <label for="filename">Visibility:</label>
+            {{ form.is_private }}
+            {{ form.is_private.errors }}
+        </div>
+        <div class="form-group">
+            <label for="filename">Expiry:</label>
+            {{ form.period }}
+            {{ form.period.errors }}
+        </div>
+        <div class="form-group">
+            <label for="filename">File:</label>
+            {{ form.upload }}
+            {{ form.upload.errors }}
+        </div>
+        <button type="submit">Upload</button>
+    </form>
+</div>
+
+    <!--Upload Form
+    <div
+      class="container h-100 d-flex justify-content-center mt-5"
+      id="upload_form"
+      v-if="showForm && authenticated"
+    >
+      <form>
+        <div class="form-group">
+          <label for="filename">File Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="filename"
+            placeholder="Enter the name of your file"
+          >
+        </div>
+        <div class="form-group">
+          <label for="description">File Description</label>
+          <input
+            type="text"
+            class="form-control"
+            id="description"
+            placeholder="Enter file description"
+          >
+        </div>
+        <div class="form-group">
+          <label for="upload">Upload File</label>
+          <input type="file" class="form-control" id="file" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>-->
+
+{% endblock %}

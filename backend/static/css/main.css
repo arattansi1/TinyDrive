@@ -1,0 +1,69 @@
+html,body
+{
+  height:100%;
+}
+
+.upload-icon {
+    background-image: url("icons/upload.png");
+    width: 100px;
+    height: 100px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 75%;
+  }
+  
+  .share-icon {
+    background-image: url("icons/share.png");
+    width: 100px;
+    height: 100px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 75%;
+  }
+  
+  .timer-icon {
+    background-image: url("icons/timer.png");
+    width: 100px;
+    height: 100px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 75%;
+  }
+  
+  .search-icon {
+    background-image: url("icons/search.png");
+    width: 38px;
+    height: 38px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 110%;
+  }
+
+  .download-icon {
+    background-image: url("icons/download.png");
+    width: 50px;
+    height: 50px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+  }
+
+
+  .file-icon {
+    background-image: url("icons/file.png");
+    width: 100px;
+    height: 100px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 75%;
+  }
+
+
+  .trash-icon {
+    background-image: url("icons/trash.png");
+    width: 50px;
+    height: 50px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+  }
